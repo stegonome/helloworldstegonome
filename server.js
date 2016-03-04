@@ -1,9 +1,9 @@
-
+/*jslint node:true */
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-
+var cozydb = require('cozydb');
 /*
     Configuration section.
 */
@@ -22,12 +22,23 @@ var debtController = require('./server/controllers/debt');
 app.use(debtController);
 
 
+/*CouchDb views init*/
+cozydb.configure(__dirname, null, function(){
+    
+    
 /*
     Start the HTTP server.
 */
-var server = app.listen(9250, function () {
-  var host = server.address().address;
-  var port = server.address().port;
+    var server = app.listen(9250, function () {
+    var host = server.address().address;
+    var port = server.address().port;
 
-  console.log('Cozy tutorial app listening at http://%s:%s', host, port);
+    console.log('Cozy tutorial app listening at http://%s:%s', host, port);
+    });
+    
 });
+
+
+
+
+

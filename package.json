@@ -1,8 +1,15 @@
 {
-  "name": "cozy-tutorial",
+  "name": "cozy-tutorial-debts",
+  "cozy-displayName":"Hello World Debts",
   "version": "1.0.0",
   "description": "Tutorial to learn building a Node.js Cozy application",
   "main": "server.js",
+    "version":"1.0.0",
+    "cozy-permissions":{
+        "debt":{
+            "description":"accès aux dettes "
+        }
+    },
   "dependencies": {
     "body-parser": "1.14.2",
     "cozydb": "0.1.7",
